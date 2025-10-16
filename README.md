@@ -27,8 +27,9 @@ pip install .
 
 - Dependencies are installed automatically:
     - cantera, numpy, scipy, cvxopt, matplotlib
-    - Distribution is tested with Cantera 2.5.1
+    - Distribution is tested with Cantera 2.6.0
     - <code>setup.py</code> lists the dependencies.
+    
 
 ## Run tests:
 ```
