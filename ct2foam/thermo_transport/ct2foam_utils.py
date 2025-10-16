@@ -279,7 +279,7 @@ def get_elements(thermo, sp_i):
     return elements
 
 
-def ct2foam_thermo_writer(species_file: Path, thermo_file: Path, reactions_file: Path, data, transport_fits, thermo_fits):
+def ct2foam_thermo_writer(species_file: Path, thermo_file: Path, reactions_file: Path, data,input_file, transport_fits, thermo_fits):
     """
     Wrapper to call the OpenFOAM writer to generate entries for thermophysicalProperties file.
     species_file: path to species.foam including a list of species in mechanism based order
@@ -297,7 +297,8 @@ def ct2foam_thermo_writer(species_file: Path, thermo_file: Path, reactions_file:
     if(species_file.exists()):
         species_file.unlink()
 
-    writer.write_reactions(reactions_file)
+    # writer.write_reactions(reactions_file)
+    writer.write_reactions(reactions_file, input_file)
 
     T, Tmid, W = data.T, data.Tmid, data.W
     As, Ts, _, poly_mu, poly_kappa, logpoly_mu, logpoly_kappa  = transport_fits

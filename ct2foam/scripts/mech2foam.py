@@ -70,8 +70,9 @@ def main():
     species_file = Path(output_dir, "species.foam")
     thermo_file = Path(output_dir, "thermo.foam")
     reactions_file = Path(output_dir, "reactions.foam")
+    input_file=Path(args.input)
     utils.ct2foam_thermo_writer(
-        species_file, thermo_file, reactions_file, data, transport_fits,
+        species_file, thermo_file, reactions_file, data, input_file, transport_fits,
         thermo_fits)
 
     print("\nDone")
